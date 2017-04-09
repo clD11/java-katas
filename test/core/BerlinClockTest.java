@@ -1,4 +1,4 @@
-package mengenlehreuhr.core;
+package core;
 
 import static org.junit.Assert.*;
 
@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import core.BerlinClock;
+import core.Clock;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 

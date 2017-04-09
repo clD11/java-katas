@@ -1,4 +1,4 @@
-package mengenlehreuhr.core;
+package core;
 
 public class BerlinClock implements Clock {
 
