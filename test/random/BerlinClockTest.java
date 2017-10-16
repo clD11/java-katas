@@ -1,4 +1,4 @@
-package core;
+package random;
 
 import static org.junit.Assert.*;
 
@@ -6,10 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import core.BerlinClock;
-import core.Clock;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import random.BerlinClock;
+import random.Clock;
 
 @RunWith(JUnitParamsRunner.class)
 public class BerlinClockTest {

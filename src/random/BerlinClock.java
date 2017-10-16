@@ -1,4 +1,4 @@
-package core;
+package random;
 
 public class BerlinClock implements Clock {
 
