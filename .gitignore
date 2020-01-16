@@ -2,8 +2,10 @@
 /bin/
 /target/
 
-
 # Eclipse Jazz
 .classpath
 .project
 .settings/
+
+.idea
+*.iml
