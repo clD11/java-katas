@@ -19,7 +19,7 @@ public class PlusMinusTest {
 	}
 	
 	@Test
-	public void testCountPostiveNegativeZero() {		
+	public void testCountPositiveNegativeZero() {
 		int[] input = new int[] { -4, 3, -9, 0, 4, 1 };		
 		int[] actual = PlusMinus.countPostiveNegativeZero(input);
 		

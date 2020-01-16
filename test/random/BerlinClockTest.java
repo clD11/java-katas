@@ -1,21 +1,18 @@
 package random;
 
-import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
-import random.BerlinClock;
-import random.Clock;
+import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnitParamsRunner.class)
 public class BerlinClockTest {
 	Clock clock;
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		clock = new BerlinClock();
 	}
