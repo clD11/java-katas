@@ -10,7 +10,10 @@ class CalculateFractionTest {
 
     @Test
     void shouldReturnNaNWhenNoPairTrades() {
-
+        int price = 2;
+        int quantity = 10;
+        long timestampMilliseconds = 111L;
+        //calculateFraction.onPublicTrade(price, quantity, timestampMilliseconds);
     }
 
 }
