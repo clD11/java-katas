@@ -1,8 +1,9 @@
 package hackerrank.java;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 class CalculateFractionTest {
 
@@ -10,10 +11,9 @@ class CalculateFractionTest {
 
     @Test
     void shouldReturnNaNWhenNoPairTrades() {
-        int price = 2;
-        int quantity = 10;
-        long timestampMilliseconds = 111L;
-        //calculateFraction.onPublicTrade(price, quantity, timestampMilliseconds);
+        calculateFraction.onPublicTrade(2, 10, 1L);
+        calculateFraction.onPrivateTrade(3, 10, 1L);
+        assertThat(calculateFraction.calculateFraction(), is(Double.NaN));
     }
 
 }
