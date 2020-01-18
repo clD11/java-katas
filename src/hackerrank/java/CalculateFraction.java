@@ -1,24 +1,35 @@
 package hackerrank.java;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CalculateFraction {
 
-    List<Trade> publicTrades = new ArrayList<>();
-    List<Trade> privateTrades = new ArrayList<>();
+    private final List<Trade> pubTrades = new ArrayList<>();
+    private final List<Trade> priTrades = new ArrayList<>();
 
     public void onPublicTrade(int price, int quantity, long timestampMilliseconds) {
-        publicTrades.add(new Trade(price, quantity, timestampMilliseconds));
+        pubTrades.add(new Trade(price, quantity, timestampMilliseconds));
     }
 
     public void onPrivateTrade(int price, int quantity, long timestampMilliseconds) {
-        privateTrades.add(new Trade(price, quantity, timestampMilliseconds));
+        priTrades.add(new Trade(price, quantity, timestampMilliseconds));
     }
 
     public Double calculateFraction() {
-     //   List<Trade[]> pairs
-        return Double.NaN;
+        pubTrades.removeIf(t -> !priTrades.contains(t));
+        priTrades.removeIf(t -> !pubTrades.contains(t));
+
+        BigDecimal pubTotal = new BigDecimal(pubTrades.stream().mapToDouble(t -> t.getPrice() * t.getQuantity()).sum());
+        BigDecimal priTotal = new BigDecimal(pubTrades.stream().mapToDouble(t -> t.getPrice() * t.getQuantity()).sum());
+
+        if (pubTrades.isEmpty() && priTrades.isEmpty()) {
+            return Double.NaN;
+        }
+
+        return pubTotal.divide(priTotal).doubleValue();
     }
 
     private class Trade {
@@ -42,6 +53,20 @@ public class CalculateFraction {
 
         public long getTimestampMilliseconds() {
             return timestampMilliseconds;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Trade trade = (Trade) o;
+            return price == trade.price &&
+                   timestampMilliseconds == trade.timestampMilliseconds;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(price, timestampMilliseconds);
         }
     }
 }
