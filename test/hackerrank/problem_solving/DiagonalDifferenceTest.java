@@ -1,7 +1,8 @@
-package hackerrank;
+package hackerrank.problem_solving;
 
 import static org.junit.Assert.assertEquals;
 
+import hackerrank.problem_solving.DiagonalDifference;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

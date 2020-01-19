@@ -1,11 +1,10 @@
-package hackerrank;
+package hackerrank.problem_solving;
 
-import static org.junit.Assert.assertArrayEquals;
-
+import junitparams.JUnitParamsRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import junitparams.JUnitParamsRunner;
+import static org.junit.Assert.assertArrayEquals;
 
 @RunWith(JUnitParamsRunner.class)
 public class BigSortingTest {

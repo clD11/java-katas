@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.problem_solving;
 
 import com.google.common.collect.Lists;
 import org.junit.jupiter.api.Test;

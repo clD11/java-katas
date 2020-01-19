@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.problem_solving;
 
 import java.util.Collections;
 
