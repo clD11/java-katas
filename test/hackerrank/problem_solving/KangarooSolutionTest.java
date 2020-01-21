@@ -13,7 +13,6 @@ class KangarooSolutionTest {
     void shouldReturnKangaroosCanBeAtSameLocation1() {
         String actual = kangarooSolution.kangaroo(0, 3, 4, 2);
         assertThat(actual, is("YES"));
-
     }
 
     @Test
