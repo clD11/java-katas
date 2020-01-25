@@ -11,8 +11,8 @@ class CatsMouseTest {
 
     @Test
     void shouldReturnCatACatchesMouse() {
-        int catAPos = 1;
-        int catBPos = 2;
+        int catAPos = 2;
+        int catBPos = 1;
         int mousePos = 3;
         String actual = catsMouse.catAndMouse(catAPos, catBPos, mousePos);
         assertThat(actual, is("Cat A"));

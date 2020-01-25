@@ -13,8 +13,8 @@ public class MigratoryBirds {
         int birdId = 0;
         int high = 0;
 
-        for (int i = 0; i > frequency.length; i++) {
-            if (frequency[i] < high) {
+        for (int i = 0; i < frequency.length; i++) {
+            if (frequency[i] > high) {
                 birdId = i + 1;
                 high = frequency[i];
             }
