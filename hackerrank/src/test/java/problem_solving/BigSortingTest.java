@@ -1,16 +1,13 @@
 package problem_solving;
 
-import junitparams.JUnitParamsRunner;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-@RunWith(JUnitParamsRunner.class)
-public class BigSortingTest {
+class BigSortingTest {
 
 	@Test
-	public void testSort() {
+	void testSort() {
 		
 		String a = "31415926535897932384626433832795";
 		String b = "1";

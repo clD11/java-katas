@@ -1,24 +1,19 @@
 package problem_solving;
 
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(JUnitParamsRunner.class)
-public class PlusMinusTest {
-	
+class PlusMinusTest {
+
 	@Test
-	@Parameters({"3,6,0.500000", "2,6,0.333333", "1,6,0.166667"})
-	public void testCalculateFraction(int a, int b, double expected) {
-		double actual = PlusMinus.calculateFraction(a, b);
-		assertEquals(expected, actual, 0);
+	void testCalculateFraction() {
+		double actual = PlusMinus.calculateFraction(3, 6);
+		assertEquals(0.500000, actual, 0);
 	}
 	
 	@Test
-	public void testCountPositiveNegativeZero() {
+	void testCountPositiveNegativeZero() {
 		int[] input = new int[] { -4, 3, -9, 0, 4, 1 };		
 		int[] actual = PlusMinus.countPostiveNegativeZero(input);
 		

@@ -1,13 +1,10 @@
 package problem_solving;
 
-import junitparams.JUnitParamsRunner;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(JUnitParamsRunner.class)
-public class StaircaseTest {
+class StaircaseTest {
 
 	@Test
 	public void printStaircase() {

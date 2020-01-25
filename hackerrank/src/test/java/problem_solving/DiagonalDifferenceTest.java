@@ -1,28 +1,23 @@
 package problem_solving;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import problem_solving.DiagonalDifference;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import junitparams.JUnitParamsRunner;
+class DiagonalDifferenceTest {
 
-@RunWith(JUnitParamsRunner.class)
-public class DiagonalDifferenceTest {
-
-	private DiagonalDifference testee;
+	private DiagonalDifference diagonalDifference;
 	
-	@Before
-	public void setup() {
-		testee = new DiagonalDifference();
+	@BeforeEach
+	void setup() {
+		diagonalDifference = new DiagonalDifference();
 	}
 	
 	@Test
-	public void testDiagonalDifference() {		
+	void testDiagonalDifference() {
 		int[][] arr = new int[][] { {11, 2, 4 }, {4, 5, 6 }, { 10, 8, -12 } };		
-		int actual = testee.sumDiagonalDifference(arr);
+		int actual = diagonalDifference.sumDiagonalDifference(arr);
 		assertEquals(15, actual);
 	}
 }

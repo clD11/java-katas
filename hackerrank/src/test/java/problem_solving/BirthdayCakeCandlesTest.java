@@ -1,16 +1,13 @@
 package problem_solving;
 
-import junitparams.JUnitParamsRunner;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(JUnitParamsRunner.class)
-public class BirthdayCakeCandlesTest {
+class BirthdayCakeCandlesTest {
 
 	@Test
-	public void testCandlesBlownOut() {
+	void testCandlesBlownOut() {
 		int actual = BirthdayCandles.blow(new int[] { 3, 2, 1, 3 });
 		assertEquals(2, actual);
 	}	
