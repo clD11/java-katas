@@ -1,5 +1,6 @@
-package problem_solving;
+package interview_preperation.warm_up_challenges;
 
+import interview_preperation.warm_up_challenges.SockMerchantImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;

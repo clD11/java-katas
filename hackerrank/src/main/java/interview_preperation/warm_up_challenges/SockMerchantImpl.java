@@ -1,4 +1,4 @@
-package problem_solving;
+package interview_preperation.warm_up_challenges;
 
 public class SockMerchantImpl {
 
