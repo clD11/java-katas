@@ -1,31 +1,39 @@
 package problem_solving;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class NumberConverter {
 
-    private final ImmutableMap<Integer, String> numberToNumeral = new ImmutableMap.Builder<Integer, String>()
-            .put(10, "X")
-            .put(9, "IX")
-            .put(8, "VIII")
-            .put(7, "VII")
-            .put(6, "VI")
-            .put(5, "V")
-            .put(4, "IV")
-            .put(3, "III")
-            .put(2, "II")
-            .put(1, "I")
-            .build();
+    private static final Map<Integer, String> numberToNumeral = new LinkedHashMap<>();
+    static {
+        numberToNumeral.put(1000, "M");
+        numberToNumeral.put(900, "CM");
+        numberToNumeral.put(500, "D");
+        numberToNumeral.put(400, "CD");
+        numberToNumeral.put(100, "C");
+        numberToNumeral.put(90, "XC");
+        numberToNumeral.put(50, "L");
+        numberToNumeral.put(40, "XL");
+        numberToNumeral.put(10, "X");
+        numberToNumeral.put(9, "IX");
+        numberToNumeral.put(8, "VIII");
+        numberToNumeral.put(7, "VII");
+        numberToNumeral.put(6, "VI");
+        numberToNumeral.put(5, "V");
+        numberToNumeral.put(4, "IV");
+        numberToNumeral.put(3, "III");
+        numberToNumeral.put(2, "II");
+        numberToNumeral.put(1, "I");
+    }
 
     public String toRomanNumeral(int normalNumber) {
         StringBuilder numeral = new StringBuilder();
-        for (Integer numeric : numberToNumeral.keySet()) {
-            if (normalNumber >= numeric) {
-                numeral.append(numberToNumeral.get(numeric));
-                normalNumber -= numeric;
-            }
-            if (normalNumber <= 0) {
-                break;
+        int remainder = normalNumber;
+        for (int key : numberToNumeral.keySet()) {
+            while (remainder >= key) {
+                remainder -= key;
+                numeral.append(numberToNumeral.get(key));
             }
         }
         return numeral.toString();

@@ -30,4 +30,10 @@ class NumberConverterTest {
         assertThat(actual, is(expected));
     }
 
+    @Test
+    void shouldConvertNormalNumbersToRomanNumeralsCMLXXXVIII() {
+       String expected = "CMLXXXVIII";
+        String actual = numberConverter.toRomanNumeral(988);
+        assertThat(actual, is(expected));
+    }
 }
