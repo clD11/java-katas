@@ -11,19 +11,18 @@ public class DistinctPairs {
             for (int j = 0; j < nums.size(); j++) {
                 if (i != j) {
                     if (nums.get(i) + nums.get(j) == target) {
-                        // get lowest
                         int lowest = (nums.get(i) < nums.get(j)) ? nums.get(i) : nums.get(j);
                         int highest = (nums.get(i) > nums.get(j)) ? nums.get(i) : nums.get(j);
-
                         Set<Integer> val;
+
                         if (!pairs.containsKey(lowest)) {
                             val = new HashSet<>();
                         } else {
                             val = pairs.get(lowest);
                         }
+
                         val.add(highest);
                         pairs.put(lowest, val);
-                        //System.out.println("" + nums.get(i) + " " + nums.get(j));
                     }
                 }
             }
