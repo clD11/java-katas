@@ -13,14 +13,16 @@ public class PickingNumbersImpl {
         int currentLength = 0;
 
         for (Integer number : a) {
+
             if (number - currentValue > 1) {
-                if (currentLength > max) {
-                    max = currentLength;
-                }
                 currentLength = 1;
                 currentValue = number;
             } else {
                 currentLength++;
+            }
+
+            if (currentLength > max) {
+                max = currentLength;
             }
         }
 
