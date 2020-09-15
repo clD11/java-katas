@@ -20,7 +20,7 @@ public class PickingNumbersImplTest {
     }
 
     @Test
-    void shouldReturnResultsWhenDiffrent() {
+    void shouldReturnResultsWhenDifferent() {
         List<Integer> a = Arrays.asList(4, 6, 5, 3, 3, 1);
         int actual = pickingNumbersImpl.pickingNumbers(a);
         assertThat(actual, is(3));
