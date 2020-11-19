@@ -4,7 +4,7 @@ import java.util.*;
 
 public class DistinctPairs {
 
-    private static final Map<Integer, Set<Integer>> pairs = new HashMap<>();
+    private final Map<Integer, Set<Integer>> pairs = new HashMap<>();
 
     public int sum(ArrayList<Integer> nums, int target) {
         for (int i = 0; i < nums.size(); i++) {

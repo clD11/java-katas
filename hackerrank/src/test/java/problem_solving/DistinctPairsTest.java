@@ -1,5 +1,6 @@
 package problem_solving;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.google.common.collect.Lists.newArrayList;
@@ -8,7 +9,12 @@ import static org.hamcrest.Matchers.is;
 
 class DistinctPairsTest {
 
-    private final DistinctPairs distinctPairs = new DistinctPairs();
+    private DistinctPairs distinctPairs;
+
+    @BeforeEach
+    void beforeEach() {
+        distinctPairs = new DistinctPairs();
+    }
 
     @Test
     void shouldReturnDistinctPairsA() {
@@ -18,7 +24,7 @@ class DistinctPairsTest {
     }
 
     @Test
-    void shouldReturnSumDistinctPairs() {
+    void shouldReturnDistinctPairsB() {
         var nums = newArrayList(1, 1, 2, 45, 46, 46);
         var actual = distinctPairs.sum(nums, 47);
         assertThat(actual, is(2));
