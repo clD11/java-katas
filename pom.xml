@@ -10,6 +10,7 @@
 	<modules>
 		<module>hackerrank</module>
 		<module>toolbox</module>
+		<module>random</module>
 	</modules>
 
 	<properties>
