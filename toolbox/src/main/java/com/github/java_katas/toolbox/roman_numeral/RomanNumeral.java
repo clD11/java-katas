@@ -1,9 +1,9 @@
-package problem_solving;
+package com.github.java_katas.toolbox.roman_numeral;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class NumberConverter {
+public class RomanNumeral {
 
     private static final Map<Integer, String> numberToNumeral = new LinkedHashMap<>();
     static {

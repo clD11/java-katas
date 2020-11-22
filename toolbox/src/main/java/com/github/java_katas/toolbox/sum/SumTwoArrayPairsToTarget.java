@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SumArrayPairsToX {
+public class SumTwoArrayPairsToTarget {
 
     public List<List<Integer>> sum(int[] arr1, int[] arr2, int x) {
         Map<Integer, Integer> lookup = new HashMap<>();

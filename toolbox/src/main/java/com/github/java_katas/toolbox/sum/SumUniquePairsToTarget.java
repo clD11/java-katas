@@ -1,8 +1,8 @@
-package problem_solving;
+package com.github.java_katas.toolbox.sum;
 
 import java.util.*;
 
-public class DistinctPairs {
+public class SumUniquePairsToTarget {
 
     private final Map<Integer, Set<Integer>> pairs = new HashMap<>();
 
