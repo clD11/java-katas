@@ -1,4 +1,4 @@
-package random;
+package com.github.java_katas.toolbox.frequency;
 
 import java.io.InputStream;
 import java.util.*;
