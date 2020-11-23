@@ -25,4 +25,12 @@ class SortSentenceByWordsTest {
         assertThat(actual, is(expected));
     }
 
+    @Test
+    void shouldReturnSortSentenceByWordsMultipleCaps() {
+        String input = "apple Apple Banana";
+        String expected = "Apple Banana apple";
+        String actual = sortSentenceByWords.execute(input);
+        assertThat(actual, is(expected));
+    }
+
 }
