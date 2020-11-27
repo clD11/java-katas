@@ -12,17 +12,16 @@ public class BetweenTwoSetsTest {
     private final BetweenTwoSets betweenTwoSets = new BetweenTwoSets();
 
     @Test
-    void shouldGetPrimeFactorA() {
-        List<Integer> expected = List.of(2, 2, 3, 3);
-        List<Integer> actual = betweenTwoSets.getPrimeFactors(36);
-        assertThat(actual, is(expected));
+    void shouldGetGCDList() {
+        assertThat(betweenTwoSets.getGreatestCommonFactor(List.of(24, 60)), is(12));
     }
 
     @Test
-    void shouldGetPrimeFactorB() {
-        List<Integer> expected = List.of(2, 3, 7);
-        List<Integer> actual = betweenTwoSets.getPrimeFactors(42);
-        assertThat(actual, is(expected));
+    void shouldGetTotalXA() {
+        assertThat(betweenTwoSets.getTotalX(List.of(2, 4), List.of(16, 32, 96)), is(3));
     }
+
+//    @Test
+//    void shouldGetTotalXB() { assertThat(betweenTwoSets.getTotalX(List.of(3, 6, 9), List.of(36, 72)), is(2)); }
 
 }
