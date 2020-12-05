@@ -25,10 +25,34 @@ public class JavaHashMap <K, V> {
                     }
                     nextNode = nextNode.next;
                 }
-                nextNode.next = new Node<>(hashcode, key, value, null);
+                // check last node
+                if (nextNode.key.equals(key)) {
+                    nextNode.setValue(value);
+                } else {
+                    nextNode.next = new Node<>(hashcode, key, value, null);
+                }
             }
         }
         return value;
+    }
+
+    public V get(K key) {
+        int hashcode = Objects.hashCode(key);
+        Node<K, V> node = table[hashcode];
+
+        if (node.key.equals(key)) {
+            return node.value;
+        }
+
+        node = node.next;
+        while (node != null) {
+            if (node.key.equals(key)) {
+                return node.value;
+            }
+            node = node.next;
+        }
+
+        return null;
     }
 
     private final class Node<K, V> {
@@ -43,14 +67,6 @@ public class JavaHashMap <K, V> {
             this.key = key;
             this.value = value;
             this.next = next;
-        }
-
-        public K getKey() {
-            return key;
-        }
-
-        public V getValue() {
-            return value;
         }
 
         public void setValue(V value) {

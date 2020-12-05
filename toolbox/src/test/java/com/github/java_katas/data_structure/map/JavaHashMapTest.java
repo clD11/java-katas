@@ -2,70 +2,64 @@ package com.github.java_katas.data_structure.map;
 
 import org.junit.jupiter.api.Test;
 
-class JavaHashMapTest {
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-    private final JavaHashMap<Integer, String> javaHashMap = new JavaHashMap<>();
+class JavaHashMapTest {
 
     @Test
     void shouldPutValue() {
-        javaHashMap.simplePut(1, "B");
-        System.out.println("DONE");
+        JavaHashMap<Integer, String> map = new JavaHashMap<>();
+        map.simplePut(1, "A");
+        assertThat(map.get(1), is("A"));
     }
 
     @Test
     void shouldUpdateValue() {
-        javaHashMap.simplePut(1, "A");
-        System.out.println("DONE");
-        javaHashMap.simplePut(1, "B");
-        System.out.println("DONE");
+        JavaHashMap<Integer, String> map = new JavaHashMap<>();
+        map.simplePut(1, "A");
+        assertThat(map.get(1), is("A"));
+        map.simplePut(1, "B");
+        assertThat(map.get(1), is("B"));
     }
 
     @Test
     void shouldPutCollision() {
-        JavaHashMap<MyKeyCollision, String> javaHashMap = new JavaHashMap<>();
-        javaHashMap.simplePut(new MyKeyCollision(1), "A");
-        System.out.println("DONE");
-        javaHashMap.simplePut(new MyKeyCollision(2), "B");
-        System.out.println("DONE");
-    }
-
-    @Test
-    void shouldPutMultipleCollision() {
-        JavaHashMap<MyKeyCollision, String> javaHashMap = new JavaHashMap<>();
-        javaHashMap.simplePut(new MyKeyCollision(1), "A");
-        System.out.println("DONE");
-        javaHashMap.simplePut(new MyKeyCollision(2), "B");
-        System.out.println("DONE");
-        javaHashMap.simplePut(new MyKeyCollision(3), "C");
-        System.out.println("DONE");
+        JavaHashMap<MyKeyCollision, String> map = new JavaHashMap<>();
+        MyKeyCollision key1 = new MyKeyCollision(1);
+        map.simplePut(key1, "A");
+        assertThat(map.get(key1), is("A"));
+        MyKeyCollision key2 = new MyKeyCollision(2);
+        map.simplePut(key2, "B");
+        assertThat(map.get(key2), is("B"));
     }
 
     @Test
     void shouldPutMultipleCollisionAndUpdate() {
-        JavaHashMap<MyKeyCollision, String> javaHashMap = new JavaHashMap<>();
-        javaHashMap.simplePut(new MyKeyCollision(1), "A");
-        System.out.println("DONE");
-        javaHashMap.simplePut(new MyKeyCollision(2), "B");
-        System.out.println("DONE");
-        javaHashMap.simplePut(new MyKeyCollision(3), "C");
-        System.out.println("DONE");
+        JavaHashMap<MyKeyCollision, String> map = new JavaHashMap<>();
+        MyKeyCollision key1 = new MyKeyCollision(1);
+        map.simplePut(key1, "A");
+        MyKeyCollision key2 = new MyKeyCollision(2);
+        map.simplePut(key2, "B");
+        MyKeyCollision key3 = new MyKeyCollision(3);
+        map.simplePut(key3, "C");
         // update 2
-        javaHashMap.simplePut(new MyKeyCollision(2), "D");
-        System.out.println("DONE");
+        map.simplePut(key2, "D");
+        assertThat(map.get(key2), is("D"));
     }
 
     @Test
     void shouldPutMultipleCollisionAndUpdateEnd() {
-        JavaHashMap<MyKeyCollision, String> javaHashMap = new JavaHashMap<>();
-        javaHashMap.simplePut(new MyKeyCollision(1), "A");
-        System.out.println("DONE");
-        javaHashMap.simplePut(new MyKeyCollision(2), "B");
-        System.out.println("DONE");
-        javaHashMap.simplePut(new MyKeyCollision(3), "C");
-        System.out.println("DONE");
+        JavaHashMap<MyKeyCollision, String> map = new JavaHashMap<>();
+        MyKeyCollision key1 = new MyKeyCollision(1);
+        map.simplePut(key1, "A");
+        MyKeyCollision key2 = new MyKeyCollision(2);
+        map.simplePut(key2, "B");
+        MyKeyCollision key3 = new MyKeyCollision(3);
+        map.simplePut(key3, "C");
         // update 3
-        javaHashMap.simplePut(new MyKeyCollision(3), "D");
-        System.out.println("DONE");
+        map.simplePut(key3, "D");
+        assertThat(map.get(key3), is("D"));
     }
 
     private class MyKeyCollision {
