@@ -1,4 +1,4 @@
-package com.github.java_katas.toolbox.roman_numeral;
+package com.github.java_katas.random.roman_numeral;
 
 import org.junit.jupiter.api.Test;
 
