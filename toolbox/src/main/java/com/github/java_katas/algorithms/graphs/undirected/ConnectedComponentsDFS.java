@@ -2,11 +2,6 @@ package com.github.java_katas.algorithms.graphs.undirected;
 
 import com.github.java_katas.data_structure.graphs.Graph;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 public class ConnectedComponentsDFS {
 
     private final boolean[] marked;
