@@ -1,6 +1,6 @@
 package com.github.java_katas.algorithms.graphs.undirected;
 
-import com.github.java_katas.data_structure.graphs.Graph;
+import com.github.java_katas.data_structure.graphs.UndirectedGraph;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -10,16 +10,16 @@ class BreadthFirstPathsTest {
 
     @Test
     void shouldFindPaths() {
-        Graph graph = new Graph(6);
-        graph.addEdge(0, 5);
-        graph.addEdge(2, 4);
-        graph.addEdge(2, 3);
-        graph.addEdge(1, 2);
-        graph.addEdge(0, 1);
-        graph.addEdge(3, 4);
-        graph.addEdge(3, 5);
-        graph.addEdge(0, 2);
-        BreadthFirstPaths breadthFirstPaths = new BreadthFirstPaths(graph, 0);
+        UndirectedGraph undirectedGraph = new UndirectedGraph(6);
+        undirectedGraph.addEdge(0, 5);
+        undirectedGraph.addEdge(2, 4);
+        undirectedGraph.addEdge(2, 3);
+        undirectedGraph.addEdge(1, 2);
+        undirectedGraph.addEdge(0, 1);
+        undirectedGraph.addEdge(3, 4);
+        undirectedGraph.addEdge(3, 5);
+        undirectedGraph.addEdge(0, 2);
+        BreadthFirstPaths breadthFirstPaths = new BreadthFirstPaths(undirectedGraph, 0);
         Iterable<Integer> path = breadthFirstPaths.pathTo(6);
         assertThat(true, is(true));
     }

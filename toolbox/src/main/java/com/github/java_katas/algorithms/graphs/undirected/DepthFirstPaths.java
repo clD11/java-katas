@@ -1,6 +1,6 @@
 package com.github.java_katas.algorithms.graphs.undirected;
 
-import com.github.java_katas.data_structure.graphs.Graph;
+import com.github.java_katas.data_structure.graphs.UndirectedGraph;
 
 import java.util.Stack;
 
@@ -10,18 +10,18 @@ public class DepthFirstPaths {
     private final int[] edgeTo;
     private final int s;
 
-    public DepthFirstPaths(Graph graph, int s) {
-        this.marked = new boolean[graph.numberOfVertices()];
-        this.edgeTo = new int[graph.numberOfVertices()];
+    public DepthFirstPaths(UndirectedGraph undirectedGraph, int s) {
+        this.marked = new boolean[undirectedGraph.numberOfVertices()];
+        this.edgeTo = new int[undirectedGraph.numberOfVertices()];
         this.s = s;
-        dfs(graph, s);
+        dfs(undirectedGraph, s);
     }
 
-    private void dfs(Graph graph, int v) {
+    private void dfs(UndirectedGraph undirectedGraph, int v) {
         marked[v] = true;
-        for (int w : graph.adj(v)) {
+        for (int w : undirectedGraph.adj(v)) {
             if (!marked[w]) {
-                dfs(graph, w);
+                dfs(undirectedGraph, w);
                 edgeTo[w] = v;
             }
         }

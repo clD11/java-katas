@@ -1,6 +1,6 @@
 package com.github.java_katas.algorithms.graphs.undirected;
 
-import com.github.java_katas.data_structure.graphs.Graph;
+import com.github.java_katas.data_structure.graphs.UndirectedGraph;
 
 public class ConnectedComponentsDFS {
 
@@ -9,25 +9,25 @@ public class ConnectedComponentsDFS {
     private final int[] size;
     private int count;
 
-    public ConnectedComponentsDFS(Graph graph) {
-        this.marked = new boolean[graph.numberOfVertices()];
-        this.id = new int[graph.numberOfVertices()];
-        this.size = new int[graph.numberOfVertices()];
-        for (int v = 0; v < graph.numberOfVertices(); v++) {
+    public ConnectedComponentsDFS(UndirectedGraph undirectedGraph) {
+        this.marked = new boolean[undirectedGraph.numberOfVertices()];
+        this.id = new int[undirectedGraph.numberOfVertices()];
+        this.size = new int[undirectedGraph.numberOfVertices()];
+        for (int v = 0; v < undirectedGraph.numberOfVertices(); v++) {
             if (!marked[v]) {
-                dfs(graph, v);
+                dfs(undirectedGraph, v);
                 count++;
             }
         }
     }
 
-    private void dfs(Graph graph, int v) {
+    private void dfs(UndirectedGraph undirectedGraph, int v) {
         marked[v] = true;
         id[v] = count;
         size[count]++;
-        for (int w : graph.adj(v)) {
+        for (int w : undirectedGraph.adj(v)) {
             if (!marked[w]) {
-                dfs(graph, w);
+                dfs(undirectedGraph, w);
             }
         }
     }

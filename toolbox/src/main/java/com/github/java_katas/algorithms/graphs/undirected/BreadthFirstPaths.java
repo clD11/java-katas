@@ -1,6 +1,6 @@
 package com.github.java_katas.algorithms.graphs.undirected;
 
-import com.github.java_katas.data_structure.graphs.Graph;
+import com.github.java_katas.data_structure.graphs.UndirectedGraph;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -12,20 +12,20 @@ public class BreadthFirstPaths {
     private final int[] edgeTo;
     private final int s;
 
-    public BreadthFirstPaths(Graph graph, int s) {
-        this.marked = new boolean[graph.numberOfVertices()];
-        this.edgeTo = new int[graph.numberOfVertices()];
+    public BreadthFirstPaths(UndirectedGraph undirectedGraph, int s) {
+        this.marked = new boolean[undirectedGraph.numberOfVertices()];
+        this.edgeTo = new int[undirectedGraph.numberOfVertices()];
         this.s = s;
-        this.bfs(graph, s);
+        this.bfs(undirectedGraph, s);
     }
 
-    private void bfs(Graph graph, int s) {
+    private void bfs(UndirectedGraph undirectedGraph, int s) {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(s);
         marked[s] = true;
         while (!queue.isEmpty()) {
             int v = queue.poll();
-            for (int w : graph.adj(v)) {
+            for (int w : undirectedGraph.adj(v)) {
                 if (!marked[w]) {
                     queue.add(w);
                     marked[w] = true;

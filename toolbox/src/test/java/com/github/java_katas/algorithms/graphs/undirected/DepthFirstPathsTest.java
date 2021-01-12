@@ -1,7 +1,6 @@
 package com.github.java_katas.algorithms.graphs.undirected;
 
-import com.github.java_katas.algorithms.graphs.undirected.DepthFirstPaths;
-import com.github.java_katas.data_structure.graphs.Graph;
+import com.github.java_katas.data_structure.graphs.UndirectedGraph;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -11,27 +10,27 @@ class DepthFirstPathsTest {
 
     @Test
     void shouldHavePath() {
-        Graph graph = new Graph(7);
-        graph.addEdge(0, 1);
-        graph.addEdge(0, 2);
-        graph.addEdge(0, 6);
-        graph.addEdge(6, 4);
-        graph.addEdge(4, 5);
-        graph.addEdge(5, 3);
-        DepthFirstPaths depthFirstPaths = new DepthFirstPaths(graph, 0);
+        UndirectedGraph undirectedGraph = new UndirectedGraph(7);
+        undirectedGraph.addEdge(0, 1);
+        undirectedGraph.addEdge(0, 2);
+        undirectedGraph.addEdge(0, 6);
+        undirectedGraph.addEdge(6, 4);
+        undirectedGraph.addEdge(4, 5);
+        undirectedGraph.addEdge(5, 3);
+        DepthFirstPaths depthFirstPaths = new DepthFirstPaths(undirectedGraph, 0);
         assertThat(depthFirstPaths.hasPath(6), is(true));
     }
 
     @Test
     void shouldFindPaths() {
-        Graph graph = new Graph(7);
-        graph.addEdge(0, 1);
-        graph.addEdge(0, 2);
-        graph.addEdge(0, 6);
-        graph.addEdge(6, 4);
-        graph.addEdge(4, 5);
-        graph.addEdge(5, 3);
-        DepthFirstPaths depthFirstPaths = new DepthFirstPaths(graph, 0);
+        UndirectedGraph undirectedGraph = new UndirectedGraph(7);
+        undirectedGraph.addEdge(0, 1);
+        undirectedGraph.addEdge(0, 2);
+        undirectedGraph.addEdge(0, 6);
+        undirectedGraph.addEdge(6, 4);
+        undirectedGraph.addEdge(4, 5);
+        undirectedGraph.addEdge(5, 3);
+        DepthFirstPaths depthFirstPaths = new DepthFirstPaths(undirectedGraph, 0);
         Iterable<Integer> path = depthFirstPaths.pathTo(5);
         assertThat(true, is(true));
     }
