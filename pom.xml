@@ -11,6 +11,7 @@
 		<module>hackerrank</module>
 		<module>toolbox</module>
 		<module>random</module>
+		<module>scratch-pad</module>
 	</modules>
 
 	<properties>
